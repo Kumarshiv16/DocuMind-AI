@@ -1,0 +1,57 @@
+# DocuMind AI Sample Knowledge Base: Modern AI and Machine Learning Handbook
+
+## Chapter 1: Introduction to Artificial Intelligence
+Artificial Intelligence (AI) is a multidisciplinary field of computer science focused on creating systems capable of performing tasks that typically require human cognitive functions. These functions include visual perception, speech recognition, decision-making, and natural language processing.
+
+Modern AI systems are primarily driven by machine learning (ML), a subset of AI where computational algorithms learn patterns and statistical relationships directly from training data rather than relying strictly on hardcoded, hand-crafted rules.
+
+## Chapter 2: Machine Learning Paradigms
+
+### Supervised Learning
+In supervised learning, the model is trained on labeled datasets where every input sample is paired with a corresponding ground truth target or annotation.
+Key tasks in supervised learning include:
+1. Classification: Predicting discrete category labels (e.g., email spam filtering, medical diagnosis, image recognition).
+2. Regression: Predicting continuous numerical values (e.g., housing price forecasting, stock volatility estimation).
+
+Common supervised algorithms include Linear Regression, Logistic Regression, Support Vector Machines (SVM), Random Forests, Gradient Boosted Decision Trees (XGBoost, LightGBM), and Deep Neural Networks.
+
+### Unsupervised Learning
+Unsupervised learning algorithms uncover hidden structures, clusters, or probability distributions within unlabeled datasets.
+Common tasks include:
+1. Clustering: Grouping similar instances together (e.g., K-Means, DBSCAN, Hierarchical Clustering).
+2. Dimensionality Reduction: Compressing high-dimensional feature spaces while preserving essential variance (e.g., Principal Component Analysis [PCA], t-SNE, UMAP).
+3. Anomaly Detection: Identifying rare observations that deviate significantly from baseline distributions.
+
+### Reinforcement Learning
+Reinforcement Learning (RL) involves an autonomous software agent learning to make optimal sequential decisions by interacting with a dynamic environment to maximize cumulative scalar rewards. It powers advancements in robotics, autonomous driving, and game-playing systems like AlphaGo.
+
+## Chapter 3: Retrieval-Augmented Generation (RAG)
+
+### What is RAG?
+Retrieval-Augmented Generation (RAG) is an architectural framework that enhances Large Language Models (LLMs) by dynamically retrieving relevant, authoritative knowledge from external databases or document repositories before generating a response.
+
+### Why RAG is Essential:
+1. Hallucination Mitigation: Prevents the model from generating plausible-sounding but factually incorrect assertions by grounding responses strictly in verified context.
+2. Proprietary & Private Data Access: Enables chatbots to answer questions from internal enterprise documents, university course syllabi, legal contracts, or clinical records without requiring costly model retraining or fine-tuning.
+3. Up-to-Date Knowledge: Allows real-time information updates simply by adding new documents to the vector database without updating model weights.
+4. Explainability & Citations: Provides transparent source citations (document name, page number, and paragraph excerpt) so users can audit and verify the factual provenance of any answer.
+
+### Core Stages in a RAG Pipeline:
+1. Document Ingestion: Extracting raw text from disparate file formats such as PDFs, Word documents (.docx), and plain text.
+2. Text Chunking: Partitioning continuous documents into semantically coherent segments (e.g., 500 to 1000 characters) with sliding window overlap (e.g., 100 to 200 characters) to prevent loss of context across segment boundaries.
+3. Embedding Generation: Transforming each text chunk into a high-dimensional dense vector using an embedding model (e.g., sentence-transformers/all-MiniLM-L6-v2 or text-embedding-004).
+4. Vector Indexing: Storing vector embeddings in a fast similarity index such as FAISS (Facebook AI Similarity Search) or ChromaDB.
+5. Semantic Retrieval: Computing vector similarity (e.g., cosine similarity or Euclidean distance) between the user query vector and indexed document vectors to fetch the top-k most relevant chunks.
+6. Contextual Prompting & Generation: Packaging the retrieved chunks into a structured prompt with strict guardrails and querying the LLM to generate the final response.
+
+## Chapter 4: Neural Networks and Deep Learning
+Deep learning models are built using layered artificial neural networks.
+- Convolutional Neural Networks (CNNs): Excel at spatial data processing such as computer vision, object detection, and medical imaging.
+- Recurrent Neural Networks (RNNs) and LSTMs: Historically used for sequential temporal data like time series and early NLP.
+- Transformer Architecture: Introduced in 2017 ("Attention Is All You Need"), the transformer architecture replaced recurrence with multi-head self-attention mechanisms, enabling massive parallelization and giving rise to modern LLMs like BERT, GPT-4, Llama 3, and Gemini.
+
+## Chapter 5: Model Evaluation Metrics
+Accurate evaluation is crucial for deploying reliable AI systems:
+- Classification Metrics: Accuracy, Precision, Recall, F1-Score, and ROC-AUC curve.
+- Regression Metrics: Mean Squared Error (MSE), Root Mean Squared Error (RMSE), and Mean Absolute Error (MAE).
+- RAG Evaluation: Retrieval Precision@k, Recall@k, Context Relevance, Answer Groundedness, and Faithfulness.

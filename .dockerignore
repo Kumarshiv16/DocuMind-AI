@@ -1,0 +1,26 @@
+# Virtual environments
+venv/
+env/
+ENV/
+
+# Secrets and environment files
+.env
+.streamlit/secrets.toml
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Local Vector DB & Tests
+vector_db/
+tests/test_vector_db/
+
+# Git & IDE
+.git/
+.gitignore
+.idea/
+.vscode/
+*.zip
